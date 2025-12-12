@@ -21,9 +21,9 @@ object PortfolioRepository {
         name = "Younes MRABTI",
         tagline = "Serving the code community",
         description = "Full Stack Developer & GIS Specialist with expertise in modern web technologies, mobile development, and geospatial solutions. Passionate about creating innovative platforms and contributing to the developer community.",
-        avatarUrl = "https://avatars.githubusercontent.com/u/ymrabti",
+        avatarUrl = "https://avatars.githubusercontent.com/ymrabti",
         location = "Morocco",
-        email = "younes.mrabti@example.com"
+        email = "admin@youmrabti.com"
     )
 
     val skills = listOf(

@@ -139,7 +139,7 @@ fun ContactSection(
                     }
                     
                     OutlinedButton(
-                        onClick = { /* Download CV action */ },
+                        onClick = { uriHandler.openUri("https://drive.google.com/file/d/1CtbHOMAFKwDKRcgt4aaJ3SohUWl1qI76/view") },
                         colors = ButtonDefaults.outlinedButtonColors(
                             contentColor = Color.White
                         ),

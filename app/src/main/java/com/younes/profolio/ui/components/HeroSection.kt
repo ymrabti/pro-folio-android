@@ -16,11 +16,13 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.younes.profolio.R
 import com.younes.profolio.data.model.PersonalInfo
 import com.younes.profolio.ui.theme.*
 import kotlin.random.Random
@@ -70,8 +72,11 @@ fun HeroSection(
                     contentDescription = personalInfo.name,
                     modifier = Modifier
                         .size(120.dp)
-                        .clip(CircleShape),
-                    contentScale = ContentScale.Crop
+                        .clip(CircleShape)
+                        .background(DarkSurface),
+                    contentScale = ContentScale.Crop,
+                    error = painterResource(id = R.drawable.ic_launcher_foreground),
+                    placeholder = painterResource(id = R.drawable.ic_launcher_foreground)
                 )
             }
             
