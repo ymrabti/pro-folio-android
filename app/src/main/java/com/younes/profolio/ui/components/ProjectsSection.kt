@@ -27,6 +27,7 @@ import com.younes.profolio.data.model.ProjectStatus
 import com.younes.profolio.data.model.Technology
 import com.younes.profolio.ui.theme.*
 import coil.compose.AsyncImage
+import com.younes.profolio.ui.components.PortfolioImage
 import com.younes.profolio.ui.components.icons.TechIcon
 
 @Composable
@@ -167,9 +168,8 @@ private fun ProjectCard(
         ) {
             // Optional project image
             project.imageUrl?.let { image ->
-                AsyncImage(
-                    model = image,
-                    contentDescription = project.title,
+                PortfolioImage(
+                    source = image,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(160.dp)

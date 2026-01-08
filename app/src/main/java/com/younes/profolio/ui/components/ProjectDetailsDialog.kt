@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import coil.compose.AsyncImage
+import com.younes.profolio.ui.components.PortfolioImage
 import com.younes.profolio.data.model.Project
 import com.younes.profolio.ui.theme.*
 import androidx.compose.ui.graphics.Color
@@ -46,9 +47,8 @@ fun ProjectDetailsDialog(
             ) {
                 // Header image
                 project.imageUrl?.let { image ->
-                    AsyncImage(
-                        model = image,
-                        contentDescription = project.title,
+                    PortfolioImage(
+                        source = image,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(200.dp)

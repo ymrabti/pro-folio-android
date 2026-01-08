@@ -67,6 +67,7 @@ object PortfolioRepository {
             description = "Platform for check-in presence/leave of employees, students, business staff, stores via short temporary QR codes shown dynamically",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
+            imageUrl = "res://presence_flow",
             liveUrl = "https://qrchecks.youmrabti.com",
             features = listOf(
                 ProjectFeature(
@@ -104,6 +105,7 @@ object PortfolioRepository {
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
             liveUrl = "https://chat-up.youmrabti.com/",
+            imageUrl = "res://chatup",
             features = listOf(
                 ProjectFeature(
                     title = "Backend/Database",
@@ -141,6 +143,7 @@ object PortfolioRepository {
             status = ProjectStatus.COMPLETED,
             liveUrl = "https://healthy.youmrabti.com/",
             githubUrl = "https://github.com/ymrabti/apple_health_ng",
+            imageUrl = "res://apple_health",
             features = listOf(
                 ProjectFeature(
                     title = "Data Processing",
@@ -173,6 +176,7 @@ object PortfolioRepository {
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.COMPLETED,
             liveUrl = "https://streetview_client.youmrabti.com/",
+            imageUrl = "res://streetview",
             technologies = listOf(
                 Technology(name = "Krpano", icon = "panorama"),
                 Technology(name = "JavaScript", icon = "javascript"),
@@ -212,6 +216,7 @@ object PortfolioRepository {
             description = "Mobile application for football matches, competitions, and results with comprehensive statistics",
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
+            imageUrl = "res://botola_max",
             features = listOf(
                 ProjectFeature(
                     title = "Football Data Management",
@@ -231,6 +236,7 @@ object PortfolioRepository {
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
             playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.geoligtmeter",
+            imageUrl = "res://geolight_meter",
             features = listOf(
                 ProjectFeature(
                     title = "Light & Location Data",
@@ -251,6 +257,7 @@ object PortfolioRepository {
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.ONGOING,
             playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.pharmagest",
+            imageUrl = "res://pharmagest",
             features = listOf(
                 ProjectFeature(
                     title = "Pharmacy Management",
@@ -292,6 +299,7 @@ object PortfolioRepository {
             status = ProjectStatus.COMPLETED,
             githubUrl = "https://github.com/ymrabti/svg-playground",
             liveUrl = "https://svg-playground.youmrabti.com",
+            imageUrl = "res://svg_playground",
             features = listOf(
                 ProjectFeature(
                     title = "SVG Creation Tool",
@@ -312,6 +320,7 @@ object PortfolioRepository {
             status = ProjectStatus.COMPLETED,
             githubUrl = "https://github.com/youmtinetflutterpacks/power_geojson",
             liveUrl = "https://pub.dev/packages/power_geojson",
+            imageUrl = "res://power_geojson",
             features = listOf(
                 ProjectFeature(
                     title = "Flutter Package (pub.dev)",
