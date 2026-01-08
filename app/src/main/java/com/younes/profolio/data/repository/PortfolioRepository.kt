@@ -63,10 +63,11 @@ object PortfolioRepository {
         // FullStack Platforms
         Project(
             id = "qr-checks",
-            title = "QR Checks",
+            title = "Presence flow with QR Codes",
             description = "Platform for check-in presence/leave of employees, students, business staff, stores via short temporary QR codes shown dynamically",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
+            liveUrl = "https://qrchecks.youmrabti.com",
             features = listOf(
                 ProjectFeature(
                     title = "Backend/Database",
@@ -102,6 +103,7 @@ object PortfolioRepository {
             description = "Modern end-to-end encryption chat application supporting group chats and file sharing",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
+            liveUrl = "https://chat-up.youmrabti.com/",
             features = listOf(
                 ProjectFeature(
                     title = "Backend/Database",
@@ -136,7 +138,9 @@ object PortfolioRepository {
             title = "AppleHealth",
             description = "Health social platform where users share Apple Health export data analysis and personal health dashboards (steps, running/walking distance, calories, exercise minutes)",
             category = ProjectCategory.FULLSTACK,
-            status = ProjectStatus.PLANNED,
+            status = ProjectStatus.COMPLETED,
+            liveUrl = "https://healthy.youmrabti.com/",
+            githubUrl = "https://github.com/ymrabti/apple_health_ng",
             features = listOf(
                 ProjectFeature(
                     title = "Data Processing",
@@ -168,6 +172,12 @@ object PortfolioRepository {
             description = "360° images viewer platform based on Krpano viewer with timeline, map integration, directional hotspots, and XLSX mass upload system",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.COMPLETED,
+            liveUrl = "https://streetview_client.youmrabti.com/",
+            technologies = listOf(
+                Technology(name = "Krpano", icon = "panorama"),
+                Technology(name = "JavaScript", icon = "javascript"),
+                Technology(name = "XLSX", icon = "excel")
+            ),
             features = listOf(
                 ProjectFeature(
                     title = "Viewer Platform",
@@ -220,6 +230,7 @@ object PortfolioRepository {
             description = "Mobile tool for collection of lux light data with geolocation, handles XLSX exports for analysis",
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
+            playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.geoligtmeter",
             features = listOf(
                 ProjectFeature(
                     title = "Light & Location Data",
@@ -239,6 +250,7 @@ object PortfolioRepository {
             description = "Pharmacy management mobile application for inventory, sales, and customer management (ongoing)",
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.ONGOING,
+            playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.pharmagest",
             features = listOf(
                 ProjectFeature(
                     title = "Pharmacy Management",
@@ -258,6 +270,8 @@ object PortfolioRepository {
             description = "This stunning Angular portfolio showcasing skills, projects, and professional experience",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            imageUrl = "https://avatars.githubusercontent.com/ymrabti",
+            liveUrl = "https://youmrabti.com",
             features = listOf(
                 ProjectFeature(
                     title = "Modern Portfolio",
@@ -276,6 +290,8 @@ object PortfolioRepository {
             description = "Create stunning SVG graphics with free online generator. Design polygons, stars, spirals, and curved shapes with real-time preview. Export as SVG or PNG.",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            githubUrl = "https://github.com/ymrabti/svg-playground",
+            liveUrl = "https://svg-playground.youmrabti.com",
             features = listOf(
                 ProjectFeature(
                     title = "SVG Creation Tool",
@@ -294,6 +310,8 @@ object PortfolioRepository {
             description = "Powerful tool for GeoJSON with flutter_map, styled from properties, supports Esri JSON, soon supports multiple projections",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            githubUrl = "https://github.com/youmtinetflutterpacks/power_geojson",
+            liveUrl = "https://pub.dev/packages/power_geojson",
             features = listOf(
                 ProjectFeature(
                     title = "Flutter Package (pub.dev)",
@@ -313,6 +331,8 @@ object PortfolioRepository {
             description = "Flutter Compass Tools Implementation measuring azimuth angle between magnetic north and device orientation",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            githubUrl = "https://github.com/youmtinetflutterpacks/flutter_azimuth",
+            liveUrl = "https://pub.dev/packages/flutter_azimuth",
             features = listOf(
                 ProjectFeature(
                     title = "Compass Plugin (pub.dev)",
@@ -331,6 +351,8 @@ object PortfolioRepository {
             description = "Popup menu with clickable buttons and global click function to maintain user attention without breaking focus",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            githubUrl = "https://github.com/youmtinetflutterpacks/popup_menu_2",
+            liveUrl = "https://pub.dev/packages/popup_menu_2",
             features = listOf(
                 ProjectFeature(
                     title = "UI Component (pub.dev)",
@@ -349,6 +371,7 @@ object PortfolioRepository {
             description = "Online tool for converting JSON data structures to Dart model classes automatically",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            githubUrl = "https://github.com/ymrabti/vscode-dartify",
             features = listOf(
                 ProjectFeature(
                     title = "Code Generation Tool",
@@ -385,6 +408,7 @@ object PortfolioRepository {
             description = "Automated soil moisture monitoring system using satellite remote sensing data from Sentinel-1 and NASA SMAP for precision agriculture",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            githubUrl = "https://github.com/ymrabti/soil-moisture-fetcher",
             features = listOf(
                 ProjectFeature(
                     title = "Satellite Data Processing",

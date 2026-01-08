@@ -16,13 +16,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.younes.profolio.data.model.Project
 import com.younes.profolio.data.model.ProjectCategory
 import com.younes.profolio.data.model.ProjectStatus
+import com.younes.profolio.data.model.Technology
 import com.younes.profolio.ui.theme.*
+import coil.compose.AsyncImage
+import com.younes.profolio.ui.components.icons.TechIcon
 
 @Composable
 fun ProjectsSection(
@@ -32,6 +37,7 @@ fun ProjectsSection(
     var selectedCategory by remember { mutableStateOf(ProjectCategory.FULLSTACK) }
     val filteredProjects = projects.filter { it.category == selectedCategory }
     var expandedProjectId by remember { mutableStateOf<String?>(null) }
+    var dialogProject by remember { mutableStateOf<Project?>(null) }
     
     Column(
         modifier = modifier
@@ -98,10 +104,18 @@ fun ProjectsSection(
                     isExpanded = expandedProjectId == project.id,
                     onToggleExpand = {
                         expandedProjectId = if (expandedProjectId == project.id) null else project.id
-                    }
+                    },
+                    onShowDetails = { dialogProject = project }
                 )
             }
         }
+    }
+    // Details dialog
+    dialogProject?.let { p ->
+        ProjectDetailsDialog(
+            project = p,
+            onDismiss = { dialogProject = null }
+        )
     }
 }
 
@@ -134,7 +148,8 @@ private fun ProjectCategoryTab(
 private fun ProjectCard(
     project: Project,
     isExpanded: Boolean,
-    onToggleExpand: () -> Unit
+    onToggleExpand: () -> Unit,
+    onShowDetails: () -> Unit
 ) {
     val uriHandler = LocalUriHandler.current
     
@@ -150,6 +165,19 @@ private fun ProjectCard(
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
+            // Optional project image
+            project.imageUrl?.let { image ->
+                AsyncImage(
+                    model = image,
+                    contentDescription = project.title,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(160.dp)
+                        .clip(RoundedCornerShape(12.dp)),
+                    contentScale = ContentScale.Crop
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+            }
             // Header row
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -214,7 +242,7 @@ private fun ProjectCard(
                             FeatureItem(
                                 title = feature.title,
                                 description = feature.description,
-                                technologies = feature.technologies.map { it.name }
+                                technologies = feature.technologies
                             )
                             Spacer(modifier = Modifier.height(8.dp))
                         }
@@ -259,7 +287,7 @@ private fun ProjectCard(
                 Spacer(modifier = Modifier.height(8.dp))
                 
                 TextButton(
-                    onClick = onToggleExpand,
+                    onClick = onShowDetails,
                     colors = ButtonDefaults.textButtonColors(
                         contentColor = PrimaryColor
                     )
@@ -278,7 +306,7 @@ private fun ProjectCard(
 }
 
 @Composable
-private fun StatusBadge(status: ProjectStatus) {
+fun StatusBadge(status: ProjectStatus) {
     val (color, icon) = when (status) {
         ProjectStatus.COMPLETED -> SuccessColor to Icons.Default.CheckCircle
         ProjectStatus.ONGOING -> WarningColor to Icons.Default.Schedule
@@ -313,7 +341,7 @@ private fun StatusBadge(status: ProjectStatus) {
 private fun FeatureItem(
     title: String,
     description: String,
-    technologies: List<String>
+    technologies: List<Technology>
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -349,7 +377,7 @@ private fun FeatureItem(
                     horizontalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     technologies.take(3).forEach { tech ->
-                        TechChip(text = tech)
+                        TechChip(text = tech.name, iconKey = tech.icon ?: tech.name)
                     }
                     if (technologies.size > 3) {
                         TechChip(text = "+${technologies.size - 3}")
@@ -361,17 +389,25 @@ private fun FeatureItem(
 }
 
 @Composable
-private fun TechChip(text: String) {
+private fun TechChip(text: String, iconKey: String? = null) {
     Surface(
         color = PrimaryColor.copy(alpha = 0.2f),
         shape = RoundedCornerShape(4.dp)
     ) {
-        Text(
-            text = text,
-            style = MaterialTheme.typography.labelSmall,
-            color = PrimaryColor,
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-        )
+        ) {
+            iconKey?.let {
+                TechIcon(key = it, tint = PrimaryColor, size = 14.dp)
+                Spacer(modifier = Modifier.width(4.dp))
+            }
+            Text(
+                text = text,
+                style = MaterialTheme.typography.labelSmall,
+                color = PrimaryColor
+            )
+        }
     }
 }
 
