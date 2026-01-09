@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components
+package com.ymrabtiapps.portfolio.ui.components
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -15,8 +15,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.younes.profolio.data.model.ProfessionalContribution
-import com.younes.profolio.ui.theme.*
+import com.ymrabtiapps.portfolio.data.model.ProfessionalContribution
+import com.ymrabtiapps.portfolio.ui.theme.*
 
 @Composable
 fun ExperienceSection(

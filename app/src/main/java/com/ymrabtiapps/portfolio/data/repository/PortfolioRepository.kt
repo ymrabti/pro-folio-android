@@ -1,6 +1,6 @@
-package com.younes.profolio.data.repository
+package com.ymrabtiapps.portfolio.data.repository
 
-import com.younes.profolio.data.model.*
+import com.ymrabtiapps.portfolio.data.model.*
 
 /**
  * Repository providing all portfolio data

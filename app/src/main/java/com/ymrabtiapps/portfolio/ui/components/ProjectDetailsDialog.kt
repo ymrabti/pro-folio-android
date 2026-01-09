@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components
+package com.ymrabtiapps.portfolio.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,14 +18,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import coil.compose.AsyncImage
-import com.younes.profolio.ui.components.PortfolioImage
-import com.younes.profolio.data.model.Project
-import com.younes.profolio.ui.theme.*
+import com.ymrabtiapps.portfolio.ui.components.PortfolioImage
+import com.ymrabtiapps.portfolio.data.model.Project
+import com.ymrabtiapps.portfolio.ui.theme.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import com.younes.profolio.ui.components.icons.TechIcon
+import com.ymrabtiapps.portfolio.ui.components.icons.TechIcon
 
 @Composable
 fun ProjectDetailsDialog(

@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.screens
+package com.ymrabtiapps.portfolio.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,9 +11,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.younes.profolio.data.repository.PortfolioRepository
-import com.younes.profolio.ui.components.*
-import com.younes.profolio.ui.theme.*
+import com.ymrabtiapps.portfolio.data.repository.PortfolioRepository
+import com.ymrabtiapps.portfolio.ui.components.*
+import com.ymrabtiapps.portfolio.ui.theme.*
 import kotlinx.coroutines.launch
 
 enum class PortfolioSection(val title: String, val icon: ImageVector) {

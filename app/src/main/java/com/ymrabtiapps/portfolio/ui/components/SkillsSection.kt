@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components
+package com.ymrabtiapps.portfolio.ui.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.*
@@ -16,9 +16,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.younes.profolio.data.model.Skill
-import com.younes.profolio.data.model.SkillCategory
-import com.younes.profolio.ui.theme.*
+import com.ymrabtiapps.portfolio.data.model.Skill
+import com.ymrabtiapps.portfolio.data.model.SkillCategory
+import com.ymrabtiapps.portfolio.ui.theme.*
 
 @Composable
 fun SkillsSection(

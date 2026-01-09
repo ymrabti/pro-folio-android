@@ -16,11 +16,11 @@ val releaseKeyAlias = localProps.getProperty("release.keyAlias")
 val releaseKeyPassword = localProps.getProperty("release.keyPassword")
 
 android {
-    namespace = "com.younes.profolio"
+    namespace = "com.ymrabtiapps.portfolio"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.younes.profolio"
+        applicationId = "com.ymrabtiapps.portfolio"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

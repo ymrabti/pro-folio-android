@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components.icons
+package com.ymrabtiapps.portfolio.ui.components.icons
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*

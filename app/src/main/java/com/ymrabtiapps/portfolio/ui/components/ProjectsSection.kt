@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components
+package com.ymrabtiapps.portfolio.ui.components
 
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
@@ -21,14 +21,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.younes.profolio.data.model.Project
-import com.younes.profolio.data.model.ProjectCategory
-import com.younes.profolio.data.model.ProjectStatus
-import com.younes.profolio.data.model.Technology
-import com.younes.profolio.ui.theme.*
+import com.ymrabtiapps.portfolio.data.model.Project
+import com.ymrabtiapps.portfolio.data.model.ProjectCategory
+import com.ymrabtiapps.portfolio.data.model.ProjectStatus
+import com.ymrabtiapps.portfolio.data.model.Technology
+import com.ymrabtiapps.portfolio.ui.theme.*
 import coil.compose.AsyncImage
-import com.younes.profolio.ui.components.PortfolioImage
-import com.younes.profolio.ui.components.icons.TechIcon
+import com.ymrabtiapps.portfolio.ui.components.PortfolioImage
+import com.ymrabtiapps.portfolio.ui.components.icons.TechIcon
 
 @Composable
 fun ProjectsSection(

@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components
+package com.ymrabtiapps.portfolio.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource

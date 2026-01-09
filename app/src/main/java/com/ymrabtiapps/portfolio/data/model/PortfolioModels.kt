@@ -1,4 +1,4 @@
-package com.younes.profolio.data.model
+package com.ymrabtiapps.portfolio.data.model
 
 /**
  * Skill category types

@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.theme
+package com.ymrabtiapps.portfolio.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components
+package com.ymrabtiapps.portfolio.ui.components
 
 import android.content.Intent
 import android.net.Uri
@@ -20,9 +20,9 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.younes.profolio.data.model.ExternalLink
-import com.younes.profolio.data.model.PersonalInfo
-import com.younes.profolio.ui.theme.*
+import com.ymrabtiapps.portfolio.data.model.ExternalLink
+import com.ymrabtiapps.portfolio.data.model.PersonalInfo
+import com.ymrabtiapps.portfolio.ui.theme.*
 
 @Composable
 fun ContactSection(

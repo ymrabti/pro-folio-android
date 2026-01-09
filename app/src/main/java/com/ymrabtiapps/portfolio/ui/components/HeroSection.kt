@@ -1,4 +1,4 @@
-package com.younes.profolio.ui.components
+package com.ymrabtiapps.portfolio.ui.components
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
@@ -22,9 +22,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.younes.profolio.R
-import com.younes.profolio.data.model.PersonalInfo
-import com.younes.profolio.ui.theme.*
+import com.ymrabtiapps.portfolio.R
+import com.ymrabtiapps.portfolio.data.model.PersonalInfo
+import com.ymrabtiapps.portfolio.ui.theme.*
 import kotlin.random.Random
 
 @Composable
