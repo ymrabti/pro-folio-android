@@ -59,7 +59,7 @@ object PortfolioRepository {
         Skill(name = "XCode", level = 80, category = SkillCategory.IDE, icon = "xcode")
     )
 
-    val projects = listOf(
+    private val projects = listOf(
         // FullStack Platforms
         Project(
             id = "qr-checks",
@@ -134,6 +134,29 @@ object PortfolioRepository {
                     )
                 )
             )
+        ),
+        Project(
+            id = "pharmacie-de-garde",
+            title = "Pharmacie de Garde Morocco",
+            description = "Web platform for locating on-duty pharmacies in Morocco with geolocation and search features",
+            category = ProjectCategory.FULLSTACK,
+            status = ProjectStatus.ONGOING,
+            imageUrl = "res://pharmacie_de_garde",
+            technologies = listOf(
+                Technology(name = "Next.js", icon = "nextjs"),
+                Technology(name = "TypeScript", icon = "typescript"),
+                Technology(name = "PostgreSQL", icon = "postgresql")
+            ),
+            features = emptyList()
+        ),
+        Project(
+            id = "rifq",
+            title = "RIFQ",
+            description = "RIFQ is a national digital platform for the identification, monitoring, and humane management of domestic and stray animals, supporting public health, animal welfare, and data-driven territorial governance.",
+            category = ProjectCategory.FULLSTACK,
+            status = ProjectStatus.PLANNED,
+            imageUrl = "res://rifq",
+            features = emptyList()
         ),
         Project(
             id = "apple-health",
