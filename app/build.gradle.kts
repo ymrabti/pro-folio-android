@@ -1,4 +1,7 @@
 import java.util.Properties
+import java.io.FileOutputStream
+import java.text.SimpleDateFormat
+import java.util.Date
 
 plugins {
     alias(libs.plugins.android.application)
@@ -6,25 +9,66 @@ plugins {
 }
 
 // Load optional signing properties from local.properties (kept out of VCS)
+val versionPropsFile = rootProject.file("local.properties")
 val localProps = Properties().apply {
-    val f = rootProject.file("local.properties")
-    if (f.exists()) f.inputStream().use { load(it) }
+    if (versionPropsFile.exists()) versionPropsFile.inputStream().use { load(it) }
 }
 val releaseStoreFile = localProps.getProperty("release.storeFile")
 val releaseStorePassword = localProps.getProperty("release.storePassword")
 val releaseKeyAlias = localProps.getProperty("release.keyAlias")
 val releaseKeyPassword = localProps.getProperty("release.keyPassword")
 
+val currentVersionCode = (localProps.getProperty("VERSION_CODE") ?: "1").toInt()
+val currentVersionName = localProps.getProperty("VERSION_NAME") ?: "1.0.0"
+
+// Version bumping task for release builds
+tasks.register("bumpVersion") {
+    doLast {
+        val newVersionCode = currentVersionCode + 1
+
+        val parts = currentVersionName.split(".")
+        var major = parts[0].toInt()
+        var minor = parts[1].toInt()
+        var patch = parts[2].toInt()
+
+        patch++
+        if (patch >= 10) {
+            patch = 0
+            minor++
+        }
+        if (minor >= 11) {
+            minor = 0
+            major++
+        }
+
+        val newVersionName = "$major.$minor.$patch"
+
+        println(">>> Bumped versionName: $currentVersionName → $newVersionName")
+        println(">>> Bumped versionCode: $currentVersionCode → $newVersionCode")
+
+        // Save back
+        localProps["VERSION_CODE"] = newVersionCode.toString()
+        localProps["VERSION_NAME"] = newVersionName
+        FileOutputStream(versionPropsFile).use { localProps.store(it, null) }
+    }
+}
+
+// Make release builds depend on version bump
+tasks.matching { it.name == "assembleRelease" || it.name == "bundleRelease" }.configureEach {
+    dependsOn("bumpVersion")
+}
+
 android {
     namespace = "com.ymrabtiapps.portfolio"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.ymrabtiapps.portfolio"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 35
+        versionCode = currentVersionCode
+        versionName = currentVersionName
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,6 +87,20 @@ android {
                 keyAlias = releaseKeyAlias
                 keyPassword = releaseKeyPassword
             }
+        }
+    }
+
+    applicationVariants.all {
+        val variant = this
+        outputs.all {
+            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
+            val date = SimpleDateFormat("yyMMdd.HHmm").format(Date())
+            val arch = output.filters.find { 
+                it.filterType == com.android.build.api.variant.FilterConfiguration.FilterType.ABI.name 
+            }?.identifier ?: "universal"
+            val versionName = variant.versionName
+            val newName = "portfolio-$date-v$versionName-${variant.name}-$arch.apk"
+            output.outputFileName = newName
         }
     }
 
