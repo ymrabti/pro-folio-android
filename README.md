@@ -109,7 +109,7 @@ The app features:
 ## License
 
 MIT License - Feel free to use this for your own portfolio!
-
+<!-- .\gradlew bundleRelease 2>&1 -->
 ## Author
 
 **Younes MRABTI**

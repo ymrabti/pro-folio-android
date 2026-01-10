@@ -58,6 +58,25 @@ tasks.matching { it.name == "assembleRelease" || it.name == "bundleRelease" }.co
     dependsOn("bumpVersion")
 }
 
+// Rename AAB outputs after bundleRelease completes
+tasks.whenTaskAdded {
+    if (name == "bundleRelease") {
+        doLast {
+            val date = SimpleDateFormat("yyMMdd.HHmm").format(Date())
+            val bundleDir = file("${project.layout.buildDirectory.get()}/outputs/bundle/release")
+            bundleDir.listFiles()?.filter { it.extension == "aab" }?.forEach { aabFile ->
+                val newName = "portfolio-$date-v$currentVersionName-release.aab"
+                val newFile = File(aabFile.parentFile, newName)
+                if (aabFile.renameTo(newFile)) {
+                    println(">>> Renamed AAB: ${aabFile.name} → $newName")
+                } else {
+                    println(">>> Failed to rename AAB: ${aabFile.name}")
+                }
+            }
+        }
+    }
+}
+
 android {
     namespace = "com.ymrabtiapps.portfolio"
     compileSdk = 35
@@ -92,14 +111,17 @@ android {
 
     applicationVariants.all {
         val variant = this
+        val variantName = variant.name
+        val versionName = variant.versionName
+        
+        // Rename APK outputs
         outputs.all {
             val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
             val date = SimpleDateFormat("yyMMdd.HHmm").format(Date())
             val arch = output.filters.find { 
                 it.filterType == com.android.build.api.variant.FilterConfiguration.FilterType.ABI.name 
             }?.identifier ?: "universal"
-            val versionName = variant.versionName
-            val newName = "portfolio-$date-v$versionName-${variant.name}-$arch.apk"
+            val newName = "portfolio-$date-v$versionName-$variantName-$arch.apk"
             output.outputFileName = newName
         }
     }
