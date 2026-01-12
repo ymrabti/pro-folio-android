@@ -45,11 +45,15 @@ fun HeroSection(
                 )
             )
     ) {
-        // Animated background particles
-        AnimatedParticles()
-        
         // Background shapes
-        BackgroundShapes()
+        BackgroundShapes(
+            modifier = Modifier.matchParentSize()
+        )
+        
+        // Animated background particles
+        AnimatedParticles(
+            modifier = Modifier.matchParentSize()
+        )
         
         Column(
             modifier = Modifier
@@ -185,7 +189,9 @@ private fun AnimatedAvatarRing() {
 }
 
 @Composable
-private fun AnimatedParticles() {
+private fun AnimatedParticles(
+    modifier: Modifier = Modifier
+) {
     val particles = remember {
         List(20) {
             Particle(
@@ -208,12 +214,12 @@ private fun AnimatedParticles() {
         label = "particleOffset"
     )
     
-    Canvas(modifier = Modifier.fillMaxSize()) {
+    Canvas(modifier = modifier.fillMaxSize()) {
         particles.forEach { particle ->
             val yOffset = (particle.y + offset) % 1f
             drawCircle(
                 color = PrimaryColor.copy(alpha = particle.alpha),
-                radius = particle.size,
+                radius = particle.size.dp.toPx(),
                 center = Offset(
                     x = particle.x * size.width,
                     y = yOffset * size.height
@@ -224,8 +230,10 @@ private fun AnimatedParticles() {
 }
 
 @Composable
-private fun BackgroundShapes() {
-    Canvas(modifier = Modifier.fillMaxSize()) {
+private fun BackgroundShapes(
+    modifier: Modifier = Modifier
+) {
+    Canvas(modifier = modifier.fillMaxSize()) {
         // Large circle top-right
         drawCircle(
             color = PrimaryColor.copy(alpha = 0.1f),
