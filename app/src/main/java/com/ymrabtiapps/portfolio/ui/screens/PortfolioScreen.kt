@@ -49,46 +49,52 @@ fun PortfolioScreen() {
         }
     }
     
-    Scaffold(
-        bottomBar = {
-            PortfolioBottomBar(
-                currentSection = currentSection,
-                onSectionSelected = { section ->
-                    coroutineScope.launch {
-                        val index = when (section) {
-                            PortfolioSection.HERO -> 0
-                            PortfolioSection.SKILLS -> 1
-                            PortfolioSection.PROJECTS -> 2
-                            PortfolioSection.EXPERIENCE -> 3
-                            PortfolioSection.EDUCATION -> 4
-                            PortfolioSection.CONTACT -> 5
-                        }
-                        listState.animateScrollToItem(index)
-                    }
-                }
-            )
-        },
-        containerColor = DarkBackground
-    ) { paddingValues ->
-        LazyColumn(
-            state = listState,
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues),
-            contentPadding = PaddingValues(bottom = 16.dp)
-        ) {
-            // Hero Section
-            item {
-                HeroSection(
-                    personalInfo = portfolioData.personalInfo,
-                    onScrollDown = {
+    Box(modifier = Modifier.fillMaxSize()) {
+        // Fixed animated particles background (independent of scroll)
+        LinkedParticlesBackground(
+            modifier = Modifier.fillMaxSize()
+        )
+        
+        Scaffold(
+            bottomBar = {
+                PortfolioBottomBar(
+                    currentSection = currentSection,
+                    onSectionSelected = { section ->
                         coroutineScope.launch {
-                            listState.animateScrollToItem(1)
+                            val index = when (section) {
+                                PortfolioSection.HERO -> 0
+                                PortfolioSection.SKILLS -> 1
+                                PortfolioSection.PROJECTS -> 2
+                                PortfolioSection.EXPERIENCE -> 3
+                                PortfolioSection.EDUCATION -> 4
+                                PortfolioSection.CONTACT -> 5
+                            }
+                            listState.animateScrollToItem(index)
                         }
-                    },
-                    modifier = Modifier.fillMaxWidth()
+                    }
                 )
-            }
+            },
+            containerColor = DarkBackground.copy(alpha = 0.95f)
+        ) { paddingValues ->
+            LazyColumn(
+                state = listState,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues),
+                contentPadding = PaddingValues(bottom = 16.dp)
+            ) {
+                // Hero Section
+                item {
+                    HeroSection(
+                        personalInfo = portfolioData.personalInfo,
+                        onScrollDown = {
+                            coroutineScope.launch {
+                                listState.animateScrollToItem(1)
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
             
             // Skills Section
             item {
@@ -142,6 +148,7 @@ fun PortfolioScreen() {
                     }
                 )
             }
+        }
         }
     }
 }

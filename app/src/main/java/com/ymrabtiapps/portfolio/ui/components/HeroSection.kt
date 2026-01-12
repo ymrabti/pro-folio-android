@@ -25,7 +25,6 @@ import coil.compose.AsyncImage
 import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.model.PersonalInfo
 import com.ymrabtiapps.portfolio.ui.theme.*
-import kotlin.random.Random
 
 @Composable
 fun HeroSection(
@@ -36,22 +35,9 @@ fun HeroSection(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        DarkBackground,
-                        DarkSurface
-                    )
-                )
-            )
     ) {
-        // Background shapes
+        // Background shapes (subtle decorations)
         BackgroundShapes(
-            modifier = Modifier.matchParentSize()
-        )
-        
-        // Animated background particles
-        AnimatedParticles(
             modifier = Modifier.matchParentSize()
         )
         
@@ -189,47 +175,6 @@ private fun AnimatedAvatarRing() {
 }
 
 @Composable
-private fun AnimatedParticles(
-    modifier: Modifier = Modifier
-) {
-    val particles = remember {
-        List(20) {
-            Particle(
-                x = Random.nextFloat(),
-                y = Random.nextFloat(),
-                size = Random.nextFloat() * 4 + 2,
-                alpha = Random.nextFloat() * 0.5f + 0.1f
-            )
-        }
-    }
-    
-    val infiniteTransition = rememberInfiniteTransition(label = "particles")
-    val offset by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(5000, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        ),
-        label = "particleOffset"
-    )
-    
-    Canvas(modifier = modifier.fillMaxSize()) {
-        particles.forEach { particle ->
-            val yOffset = (particle.y + offset) % 1f
-            drawCircle(
-                color = PrimaryColor.copy(alpha = particle.alpha),
-                radius = particle.size.dp.toPx(),
-                center = Offset(
-                    x = particle.x * size.width,
-                    y = yOffset * size.height
-                )
-            )
-        }
-    }
-}
-
-@Composable
 private fun BackgroundShapes(
     modifier: Modifier = Modifier
 ) {
@@ -249,10 +194,3 @@ private fun BackgroundShapes(
         )
     }
 }
-
-private data class Particle(
-    val x: Float,
-    val y: Float,
-    val size: Float,
-    val alpha: Float
-)
