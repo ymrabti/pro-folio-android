@@ -1,3 +1,72 @@
 <resources>
     <string name="app_name">YOUNES M\'RABTI - PORTFOLIO</string>
+    
+    <!-- Hero Section -->
+    <string name="hero_tagline">Serving the code community</string>
+    <string name="hero_scroll_down">Scroll Down to Explore</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_skills">Skills</string>
+    <string name="nav_projects">Projects</string>
+    <string name="nav_experience">Experience</string>
+    <string name="nav_education">Education</string>
+    <string name="nav_contact">Contact</string>
+    
+    <!-- Skills Section -->
+    <string name="skills_title">Technical Skills &amp; Expertise</string>
+    <string name="skills_subtitle">Technologies and tools I use to build amazing solutions</string>
+    <string name="skills_category_dev">Development</string>
+    <string name="skills_category_ops">DevOps</string>
+    <string name="skills_category_database">Databases</string>
+    <string name="skills_category_gis">GIS &amp; Mapping</string>
+    <string name="skills_category_ide">Development Tools</string>
+    
+    <!-- Projects Section -->
+    <string name="projects_title">Featured Projects</string>
+    <string name="projects_subtitle">Innovative solutions across web, mobile, and GIS platforms</string>
+    <string name="projects_category_fullstack">FullStack Platforms</string>
+    <string name="projects_category_mobile">Mobile Applications</string>
+    <string name="projects_category_tool">Development Tools</string>
+    <string name="projects_category_professional">Professional Work</string>
+    <string name="projects_status_completed">Completed</string>
+    <string name="projects_status_ongoing">In Progress</string>
+    <string name="projects_status_planned">Planned</string>
+    <string name="projects_view_more">View Details</string>
+    <string name="projects_technologies">Technologies Used</string>
+    <string name="projects_features">Key Features</string>
+    
+    <!-- Experience Section -->
+    <string name="experience_title">Professional Experience</string>
+    <string name="experience_subtitle">Contributing to meaningful projects and organizations</string>
+    <string name="experience_current">Current Position</string>
+    <string name="experience_responsibilities">Key Responsibilities</string>
+    
+    <!-- Education Section -->
+    <string name="education_title">Education</string>
+    <string name="education_subtitle">Academic background and qualifications</string>
+    
+    <!-- Contact Section -->
+    <string name="contact_title">Let\'s Connect &amp; Work Together!</string>
+    <string name="contact_subtitle">Ready to bring your ideas to life? Get in touch!</string>
+    <string name="contact_github">GitHub Repositories</string>
+    <string name="contact_linkedin">Professional Network</string>
+    <string name="contact_patreon">Support My Work</string>
+    <string name="contact_hire_title">Ready to Work Together?</string>
+    <string name="contact_hire_description">Let\'s discuss your next project and bring your ideas to life.</string>
+    <string name="contact_hire_button">Hire Me</string>
+    <string name="contact_cv_button">Download CV</string>
+    <string name="contact_location">Available for Remote &amp; On-site Work</string>
+    <string name="contact_response">Usually responds within 24 hours</string>
+    <string name="contact_availability">Open for Freelance &amp; Full-time Opportunities</string>
+    
+    <!-- Common -->
+    <string name="common_read_more">Read More</string>
+    <string name="common_view_project">View Project</string>
+    <string name="common_learn_more">Learn More</string>
+    <string name="common_back_to_top">Back to Top</string>
+    
+    <!-- Footer -->
+    <string name="footer_copyright">© %1$d Younes MRABTI. All rights reserved.</string>
+    <string name="footer_made_with">Made with ❤️ using Kotlin &amp; Jetpack Compose</string>
 </resources>

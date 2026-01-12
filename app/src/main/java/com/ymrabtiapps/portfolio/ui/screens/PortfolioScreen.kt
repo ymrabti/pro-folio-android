@@ -10,19 +10,21 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.repository.PortfolioRepository
 import com.ymrabtiapps.portfolio.ui.components.*
 import com.ymrabtiapps.portfolio.ui.theme.*
 import kotlinx.coroutines.launch
 
-enum class PortfolioSection(val title: String, val icon: ImageVector) {
-    HERO("Home", Icons.Default.Home),
-    SKILLS("Skills", Icons.Default.Star),
-    PROJECTS("Projects", Icons.Default.Folder),
-    EXPERIENCE("Experience", Icons.Default.Work),
-    EDUCATION("Education", Icons.Default.School),
-    CONTACT("Contact", Icons.Default.Email)
+enum class PortfolioSection(val titleResId: Int, val icon: ImageVector) {
+    HERO(R.string.nav_home, Icons.Default.Home),
+    SKILLS(R.string.nav_skills, Icons.Default.Star),
+    PROJECTS(R.string.nav_projects, Icons.Default.Folder),
+    EXPERIENCE(R.string.nav_experience, Icons.Default.Work),
+    EDUCATION(R.string.nav_education, Icons.Default.School),
+    CONTACT(R.string.nav_contact, Icons.Default.Email)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -154,16 +156,17 @@ private fun PortfolioBottomBar(
         contentColor = TextSecondary
     ) {
         PortfolioSection.values().forEach { section ->
+            val title = stringResource(section.titleResId)
             NavigationBarItem(
                 icon = {
                     Icon(
                         imageVector = section.icon,
-                        contentDescription = section.title
+                        contentDescription = title
                     )
                 },
                 label = {
                     Text(
-                        text = section.title,
+                        text = title,
                         style = MaterialTheme.typography.labelSmall
                     )
                 },

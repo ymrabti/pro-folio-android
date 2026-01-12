@@ -14,8 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.model.Education
 import com.ymrabtiapps.portfolio.ui.theme.*
 
@@ -41,7 +43,7 @@ fun EducationSection(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Education",
+                text = stringResource(R.string.education_title),
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontWeight = FontWeight.Bold
                 ),
@@ -51,7 +53,7 @@ fun EducationSection(
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(
-                text = "Academic background and qualifications",
+                text = stringResource(R.string.education_subtitle),
                 style = MaterialTheme.typography.bodyMedium,
                 color = TextSecondary
             )

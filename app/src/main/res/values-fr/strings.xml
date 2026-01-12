@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">YOUNES M\'RABTI - PORTFOLIO</string>
+    
+    <!-- Hero Section -->
+    <string name="hero_tagline">Au service de la communauté code</string>
+    <string name="hero_scroll_down">Faites défiler pour explorer</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_skills">Compétences</string>
+    <string name="nav_projects">Projets</string>
+    <string name="nav_experience">Expérience</string>
+    <string name="nav_education">Formation</string>
+    <string name="nav_contact">Contact</string>
+    
+    <!-- Skills Section -->
+    <string name="skills_title">Compétences Techniques et Expertise</string>
+    <string name="skills_subtitle">Technologies et outils que j\'utilise pour créer des solutions extraordinaires</string>
+    <string name="skills_category_dev">Développement</string>
+    <string name="skills_category_ops">DevOps</string>
+    <string name="skills_category_database">Bases de données</string>
+    <string name="skills_category_gis">SIG &amp; Cartographie</string>
+    <string name="skills_category_ide">Outils de Développement</string>
+    
+    <!-- Projects Section -->
+    <string name="projects_title">Projets Phares</string>
+    <string name="projects_subtitle">Solutions innovantes sur les plateformes web, mobile et SIG</string>
+    <string name="projects_category_fullstack">Plateformes FullStack</string>
+    <string name="projects_category_mobile">Applications Mobiles</string>
+    <string name="projects_category_tool">Outils de Développement</string>
+    <string name="projects_category_professional">Travail Professionnel</string>
+    <string name="projects_status_completed">Terminé</string>
+    <string name="projects_status_ongoing">En cours</string>
+    <string name="projects_status_planned">Planifié</string>
+    <string name="projects_view_more">Voir les détails</string>
+    <string name="projects_technologies">Technologies utilisées</string>
+    <string name="projects_features">Fonctionnalités clés</string>
+    
+    <!-- Experience Section -->
+    <string name="experience_title">Expérience Professionnelle</string>
+    <string name="experience_subtitle">Contribuer à des projets significatifs et aux organisations</string>
+    <string name="experience_current">Poste actuel</string>
+    <string name="experience_responsibilities">Responsabilités clés</string>
+    
+    <!-- Education Section -->
+    <string name="education_title">Formation</string>
+    <string name="education_subtitle">Parcours académique et qualifications</string>
+    
+    <!-- Contact Section -->
+    <string name="contact_title">Restons connectés et travaillons ensemble!</string>
+    <string name="contact_subtitle">Prêt à donner vie à vos idées? Contactez-moi!</string>
+    <string name="contact_github">Dépôts GitHub</string>
+    <string name="contact_linkedin">Réseau professionnel</string>
+    <string name="contact_patreon">Soutenez mon travail</string>
+    <string name="contact_hire_title">Prêt à travailler ensemble?</string>
+    <string name="contact_hire_description">Discutons de votre prochain projet et donnons vie à vos idées.</string>
+    <string name="contact_hire_button">Engagez-moi</string>
+    <string name="contact_cv_button">Télécharger CV</string>
+    <string name="contact_location">Disponible pour du travail à distance et sur site</string>
+    <string name="contact_response">Répond généralement dans les 24 heures</string>
+    <string name="contact_availability">Ouvert aux opportunités freelance et temps plein</string>
+    
+    <!-- Common -->
+    <string name="common_read_more">Lire la suite</string>
+    <string name="common_view_project">Voir le projet</string>
+    <string name="common_learn_more">En savoir plus</string>
+    <string name="common_back_to_top">Retour en haut</string>
+    
+    <!-- Footer -->
+    <string name="footer_copyright">© %1$d Younes MRABTI. Tous droits réservés.</string>
+    <string name="footer_made_with">Fait avec ❤️ en utilisant Kotlin &amp; Jetpack Compose</string>
+</resources>

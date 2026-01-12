@@ -18,9 +18,11 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.model.Project
 import com.ymrabtiapps.portfolio.data.model.ProjectCategory
 import com.ymrabtiapps.portfolio.data.model.ProjectStatus
@@ -54,7 +56,7 @@ fun ProjectsSection(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Featured Projects",
+                text = stringResource(R.string.projects_title),
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontWeight = FontWeight.Bold
                 ),
@@ -64,7 +66,7 @@ fun ProjectsSection(
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(
-                text = "Innovative solutions across web, mobile, and GIS platforms",
+                text = stringResource(R.string.projects_subtitle),
                 style = MaterialTheme.typography.bodyMedium,
                 color = TextSecondary
             )

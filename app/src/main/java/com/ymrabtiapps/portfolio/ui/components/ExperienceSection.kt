@@ -13,8 +13,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.model.ProfessionalContribution
 import com.ymrabtiapps.portfolio.ui.theme.*
 
@@ -37,7 +39,7 @@ fun ExperienceSection(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Professional Experience",
+                text = stringResource(R.string.experience_title),
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontWeight = FontWeight.Bold
                 ),
@@ -47,7 +49,7 @@ fun ExperienceSection(
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(
-                text = "Contributing to meaningful projects and organizations",
+                text = stringResource(R.string.experience_subtitle),
                 style = MaterialTheme.typography.bodyMedium,
                 color = TextSecondary
             )

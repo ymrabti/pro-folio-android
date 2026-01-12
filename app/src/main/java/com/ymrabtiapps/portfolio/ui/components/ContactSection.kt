@@ -17,9 +17,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.model.ExternalLink
 import com.ymrabtiapps.portfolio.data.model.PersonalInfo
 import com.ymrabtiapps.portfolio.ui.theme.*
@@ -51,7 +53,7 @@ fun ContactSection(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Let's Connect & Work Together!",
+                text = stringResource(R.string.contact_title),
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontWeight = FontWeight.Bold
                 ),
@@ -62,7 +64,7 @@ fun ContactSection(
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(
-                text = "Ready to bring your ideas to life? Get in touch!",
+                text = stringResource(R.string.contact_subtitle),
                 style = MaterialTheme.typography.bodyMedium,
                 color = TextSecondary,
                 textAlign = TextAlign.Center

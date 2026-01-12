@@ -14,9 +14,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.model.ExternalLink
 import com.ymrabtiapps.portfolio.ui.theme.*
 
@@ -84,7 +86,7 @@ fun FooterSection(
             )
             Spacer(modifier = Modifier.width(4.dp))
             Text(
-                text = "Back to Top",
+                text = stringResource(R.string.common_back_to_top),
                 color = PrimaryColor
             )
         }

@@ -14,8 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.ymrabtiapps.portfolio.R
 import com.ymrabtiapps.portfolio.data.model.Skill
 import com.ymrabtiapps.portfolio.data.model.SkillCategory
 import com.ymrabtiapps.portfolio.ui.theme.*
@@ -42,7 +44,7 @@ fun SkillsSection(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Technical Skills & Expertise",
+                text = stringResource(R.string.skills_title),
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontWeight = FontWeight.Bold
                 ),
@@ -52,7 +54,7 @@ fun SkillsSection(
             Spacer(modifier = Modifier.height(8.dp))
             
             Text(
-                text = "Technologies and tools I use to build amazing solutions",
+                text = stringResource(R.string.skills_subtitle),
                 style = MaterialTheme.typography.bodyMedium,
                 color = TextSecondary
             )
