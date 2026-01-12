@@ -563,7 +563,16 @@ object PortfolioRepository {
             degree = "MPSI",
             field = "Mathématiques, Physique et Sciences de l'Ingénieur",
             period = "09/2014 - 06/2016",
+            location = "Meknès",
             description = "Preparatory classes for engineering schools focusing on mathematics, physics, and engineering sciences."
+        ),
+        Education(
+            institution = "Lycée Lalla Salma",
+            degree = "Baccalauréat",
+            field = "Sciences Mathématiques",
+            period = "2014",
+            location = "Rissani",
+            description = "High school diploma with focus on mathematics and sciences."
         )
     )
 
