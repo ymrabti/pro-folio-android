@@ -13,6 +13,7 @@ object PortfolioRepository {
             skills = skills,
             projects = projects,
             professionalContributions = professionalContributions,
+            educations = educations,
             externalLinks = externalLinks
         )
     }
@@ -545,6 +546,24 @@ object PortfolioRepository {
                     )
                 )
             )
+        )
+    )
+
+    val educations = listOf(
+        Education(
+            institution = "École Hassania des travaux publics",
+            degree = "Ingénieur d'État",
+            field = "Science de l'information géographique",
+            period = "09/2016 - 07/2020",
+            location = "Casablanca",
+            description = "Engineering degree in Geographic Information Science covering GIS technologies, spatial databases, remote sensing, and geospatial application development."
+        ),
+        Education(
+            institution = "CPGE - Classes préparatoires aux grandes écoles d'ingénieurs",
+            degree = "MPSI",
+            field = "Mathématiques, Physique et Sciences de l'Ingénieur",
+            period = "09/2014 - 06/2016",
+            description = "Preparatory classes for engineering schools focusing on mathematics, physics, and engineering sciences."
         )
     )
 

@@ -89,6 +89,18 @@ data class ProfessionalContribution(
 )
 
 /**
+ * Education/Academic background
+ */
+data class Education(
+    val institution: String,
+    val degree: String,
+    val field: String? = null,
+    val period: String,
+    val location: String? = null,
+    val description: String? = null
+)
+
+/**
  * External links (social media, etc.)
  */
 data class ExternalLink(
@@ -118,5 +130,6 @@ data class PortfolioData(
     val skills: List<Skill>,
     val projects: List<Project>,
     val professionalContributions: List<ProfessionalContribution>,
+    val educations: List<Education>,
     val externalLinks: List<ExternalLink>
 )

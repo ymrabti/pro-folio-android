@@ -21,6 +21,7 @@ enum class PortfolioSection(val title: String, val icon: ImageVector) {
     SKILLS("Skills", Icons.Default.Star),
     PROJECTS("Projects", Icons.Default.Folder),
     EXPERIENCE("Experience", Icons.Default.Work),
+    EDUCATION("Education", Icons.Default.School),
     CONTACT("Contact", Icons.Default.Email)
 }
 
@@ -39,7 +40,8 @@ fun PortfolioScreen() {
                 1 -> PortfolioSection.SKILLS
                 2 -> PortfolioSection.PROJECTS
                 3 -> PortfolioSection.EXPERIENCE
-                4, 5 -> PortfolioSection.CONTACT
+                4 -> PortfolioSection.EDUCATION
+                5, 6 -> PortfolioSection.CONTACT
                 else -> PortfolioSection.HERO
             }
         }
@@ -56,7 +58,8 @@ fun PortfolioScreen() {
                             PortfolioSection.SKILLS -> 1
                             PortfolioSection.PROJECTS -> 2
                             PortfolioSection.EXPERIENCE -> 3
-                            PortfolioSection.CONTACT -> 4
+                            PortfolioSection.EDUCATION -> 4
+                            PortfolioSection.CONTACT -> 5
                         }
                         listState.animateScrollToItem(index)
                     }
@@ -105,6 +108,14 @@ fun PortfolioScreen() {
             item {
                 ExperienceSection(
                     contributions = portfolioData.professionalContributions,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+            
+            // Education Section
+            item {
+                EducationSection(
+                    educations = portfolioData.educations,
                     modifier = Modifier.fillMaxWidth()
                 )
             }
