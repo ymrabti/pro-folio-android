@@ -260,7 +260,7 @@ object PortfolioRepository {
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
             playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.geoligtmeter",
-            imageUrl = "https://www.youmti.net/assets/images/geolight_meter.webp",
+            imageUrl = "https://www.youmti.net/assets/images/geolightmeter_1.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Light & Location Data",
