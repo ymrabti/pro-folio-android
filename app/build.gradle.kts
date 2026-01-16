@@ -33,11 +33,11 @@ tasks.register("bumpVersion") {
         var patch = parts[2].toInt()
 
         patch++
-        if (patch >= 10) {
+        if (patch >= 100) {
             patch = 0
             minor++
         }
-        if (minor >= 11) {
+        if (minor >= 100) {
             minor = 0
             major++
         }
@@ -123,7 +123,7 @@ android {
             val arch = output.filters.find { 
                 it.filterType == com.android.build.api.variant.FilterConfiguration.FilterType.ABI.name 
             }?.identifier ?: "universal"
-            val newName = "portfolio-$date-v$versionName+-$variantName-$arch.apk"
+            val newName = "portfolio-$date-v$versionName+$versionCode-$variantName-$arch.apk"
             output.outputFileName = newName
         }
     }
