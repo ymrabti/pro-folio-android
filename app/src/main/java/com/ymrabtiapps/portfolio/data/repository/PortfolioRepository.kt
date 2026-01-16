@@ -68,7 +68,7 @@ object PortfolioRepository {
             description = "Platform for check-in presence/leave of employees, students, business staff, stores via short temporary QR codes shown dynamically",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
-            imageUrl = "res://presence_flow",
+            imageUrl = "https://www.youmti.net/assets/images/presence_flow.webp",
             liveUrl = "https://qrchecks.youmrabti.com",
             features = listOf(
                 ProjectFeature(
@@ -106,7 +106,7 @@ object PortfolioRepository {
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
             liveUrl = "https://chat-up.youmrabti.com/",
-            imageUrl = "res://chatup",
+            imageUrl = "https://www.youmti.net/assets/images/chatup.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Backend/Database",
@@ -142,7 +142,7 @@ object PortfolioRepository {
             description = "Web platform for locating on-duty pharmacies in Morocco with geolocation and search features",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
-            imageUrl = "res://pharmacie_de_garde",
+            imageUrl = "https://www.youmti.net/assets/images/pharmacie_de_garde.webp",
             technologies = listOf(
                 Technology(name = "Next.js", icon = "nextjs"),
                 Technology(name = "TypeScript", icon = "typescript"),
@@ -156,7 +156,7 @@ object PortfolioRepository {
             description = "RIFQ is a national digital platform for the identification, monitoring, and humane management of domestic and stray animals, supporting public health, animal welfare, and data-driven territorial governance.",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.PLANNED,
-            imageUrl = "res://rifq",
+            imageUrl = "https://www.youmti.net/assets/images/rifq.webp",
             features = emptyList()
         ),
         Project(
@@ -167,7 +167,7 @@ object PortfolioRepository {
             status = ProjectStatus.COMPLETED,
             liveUrl = "https://healthy.youmrabti.com/",
             githubUrl = "https://github.com/ymrabti/apple_health_ng",
-            imageUrl = "res://apple_health",
+            imageUrl = "https://www.youmti.net/assets/images/apple_health.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Data Processing",
@@ -200,7 +200,7 @@ object PortfolioRepository {
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.COMPLETED,
             liveUrl = "https://streetview_client.youmrabti.com/",
-            imageUrl = "res://streetview",
+            imageUrl = "https://www.youmti.net/assets/images/streetview.webp",
             technologies = listOf(
                 Technology(name = "Krpano", icon = "panorama"),
                 Technology(name = "JavaScript", icon = "javascript"),
@@ -240,7 +240,7 @@ object PortfolioRepository {
             description = "Mobile application for football matches, competitions, and results with comprehensive statistics",
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
-            imageUrl = "res://botola_max",
+            imageUrl = "https://www.youmti.net/assets/images/botola_max.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Football Data Management",
@@ -260,7 +260,7 @@ object PortfolioRepository {
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
             playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.geoligtmeter",
-            imageUrl = "res://geolight_meter",
+            imageUrl = "https://www.youmti.net/assets/images/geolight_meter.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Light & Location Data",
@@ -281,7 +281,7 @@ object PortfolioRepository {
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.ONGOING,
             playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.pharmagest",
-            imageUrl = "res://pharmagest",
+            imageUrl = "https://www.youmti.net/assets/images/pharmagest.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Pharmacy Management",
@@ -323,7 +323,7 @@ object PortfolioRepository {
             status = ProjectStatus.COMPLETED,
             githubUrl = "https://github.com/ymrabti/svg-playground",
             liveUrl = "https://svg-playground.youmrabti.com",
-            imageUrl = "res://svg_playground",
+            imageUrl = "https://www.youmti.net/assets/images/svg_playground.webp",
             features = listOf(
                 ProjectFeature(
                     title = "SVG Creation Tool",
@@ -344,7 +344,7 @@ object PortfolioRepository {
             status = ProjectStatus.COMPLETED,
             githubUrl = "https://github.com/youmtinetflutterpacks/power_geojson",
             liveUrl = "https://pub.dev/packages/power_geojson",
-            imageUrl = "res://power_geojson",
+            imageUrl = "https://www.youmti.net/assets/images/power_geojson.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Flutter Package (pub.dev)",
