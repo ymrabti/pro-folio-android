@@ -66,7 +66,7 @@ tasks.whenTaskAdded {
             val date = SimpleDateFormat("yyMMdd.HHmm").format(Date())
             val bundleDir = file("${project.layout.buildDirectory.get()}/outputs/bundle/release")
             bundleDir.listFiles()?.filter { it.extension == "aab" }?.forEach { aabFile ->
-                val newName = "portfolio-$date-v$currentVersionName-release.aab"
+                val newName = "portfolio-$date-v$currentVersionName+$currentVersionCode-release.aab"
                 val newFile = File(aabFile.parentFile, newName)
                 if (aabFile.renameTo(newFile)) {
                     println(">>> Renamed AAB: ${aabFile.name} → $newName")
@@ -113,6 +113,7 @@ android {
     applicationVariants.all {
         val variant = this
         val variantName = variant.name
+        val versionCode = variant.versionCode
         val versionName = variant.versionName
         
         // Rename APK outputs
@@ -122,7 +123,7 @@ android {
             val arch = output.filters.find { 
                 it.filterType == com.android.build.api.variant.FilterConfiguration.FilterType.ABI.name 
             }?.identifier ?: "universal"
-            val newName = "portfolio-$date-v$versionName-$variantName-$arch.apk"
+            val newName = "portfolio-$date-v$versionName+-$variantName-$arch.apk"
             output.outputFileName = newName
         }
     }
@@ -139,17 +140,35 @@ android {
             signingConfigs.findByName("release")?.let { signingConfig = it }
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         compose = true
     }
 
+    splits {
+        abi {
+            isEnable = true
+            reset()
+
+            include(
+                "armeabi-v7a",
+                "arm64-v8a",
+                "x86",
+                "x86_64"
+            )
+
+            isUniversalApk = false
+        }
+    }
 }
 
 dependencies {
