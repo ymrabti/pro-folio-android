@@ -1,0 +1,36 @@
+default_platform(:android)
+
+platform :android do
+
+  desc "Deploy to Play Store Production"
+  lane :production do
+
+    # Get latest versionCode from Play
+    latest_version = google_play_track_version_codes(
+      track: "production"
+    ).max || 0
+
+    new_version = latest_version + 1
+
+    puts "Latest versionCode: #{latest_version}"
+    puts "New versionCode: #{new_version}"
+
+    # Update pubspec.yaml
+    sh "sed -i 's/version: .*/version: 1.0.#{new_version}+#{new_version}/' ../pubspec.yaml"
+
+    # Build AAB
+    sh "flutter clean"
+    sh "flutter pub get"
+    sh "flutter build appbundle --release"
+
+    # Upload to Play Store
+    upload_to_play_store(
+      track: 'production',
+      aab: '../build/app/outputs/bundle/release/app-release.aab',
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+
+  end
+end

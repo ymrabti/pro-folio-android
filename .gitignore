@@ -9,7 +9,7 @@
 
 # Java class files
 *.class
-
+app/setcret.json
 # Generated files
 bin/
 gen/
