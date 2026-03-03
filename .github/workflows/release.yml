@@ -22,7 +22,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.2'
           bundler-cache: true
 
       - name: Decode Keystore
@@ -35,7 +35,11 @@ jobs:
           TAG="${{ github.ref_name }}"
           VERSION_NAME="${TAG#v}"
           VERSION_NAME="${VERSION_NAME%+*}"
-          VERSION_CODE="${TAG##*+}"
+          if [[ "$TAG" == *"+"* ]]; then
+            VERSION_CODE="${TAG##*+}"
+          else
+            VERSION_CODE=$(git rev-list --count HEAD)
+          fi
           echo "release.storeFile=$(pwd)/app/release.keystore" >> local.properties
           echo "release.storePassword=${{ secrets.KEYSTORE_PASSWORD }}" >> local.properties
           echo "release.keyAlias=${{ secrets.KEY_ALIAS }}" >> local.properties
