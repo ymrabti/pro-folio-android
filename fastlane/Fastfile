@@ -8,7 +8,8 @@ platform :android do
     # Build AAB with Gradle
     gradle(
       task: "bundle",
-      build_type: "Release"
+      build_type: "Release",
+      flags: "--stacktrace"
     )
 
     # Upload to Play Store

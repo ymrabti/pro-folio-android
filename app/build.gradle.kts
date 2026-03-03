@@ -54,9 +54,11 @@ tasks.register("bumpVersion") {
     }
 }
 
-// Make release builds depend on version bump
-tasks.matching { it.name == "assembleRelease" || it.name == "bundleRelease" }.configureEach {
-    dependsOn("bumpVersion")
+// Make release builds depend on version bump (skip in CI — version is set from the tag)
+if (System.getenv("CI") == null) {
+    tasks.matching { it.name == "assembleRelease" || it.name == "bundleRelease" }.configureEach {
+        dependsOn("bumpVersion")
+    }
 }
 
 // Rename AAB outputs after bundleRelease completes
