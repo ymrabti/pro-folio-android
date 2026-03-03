@@ -16,8 +16,8 @@ jobs:
             - name: Setup JDK
               uses: actions/setup-java@v4
               with:
-                    java-version: "11"
-                    distribution: "temurin"
+                  java-version: "17"
+                  distribution: "temurin"
 
             - name: Setup Ruby
               uses: ruby/setup-ruby@v1
@@ -50,13 +50,13 @@ jobs:
             - name: Decode Play Store JSON
               env:
                   PLAY_STORE_JSON: ${{ secrets.PLAY_STORE_JSON }}
-              run: echo "$PLAY_STORE_JSON" > app/setcret.json
+              run: echo "$PLAY_STORE_JSON" > app/secret.json
 
             - name: Make Gradle executable
               run: chmod +x gradlew
 
             - name: Build AAB
-              run: ./gradlew bundleRelease --stacktrace
+              run: ./gradlew bundleRelease
 
             - name: Upload to Play Store
               run: bundle exec fastlane production
