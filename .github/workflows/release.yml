@@ -33,7 +33,7 @@ jobs:
           echo "${{ secrets.PLAY_STORE_JSON }}" > android/fastlane/keys/play-store-service-account.json
 
       - name: Make Gradle executable
-        run: chmod +x android/gradlew
+        run: chmod +x gradlew
 
       - name: Run Fastlane
         run: |
