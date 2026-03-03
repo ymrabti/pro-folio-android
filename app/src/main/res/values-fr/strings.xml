@@ -9,8 +9,7 @@
     <string name="nav_home">Accueil</string>
     <string name="nav_skills">Compétences</string>
     <string name="nav_projects">Projets</string>
-    <string name="nav_experience">Expérience</string>
-    <string name="nav_education">Formation</string>
+    <string name="nav_career">Carrière</string>
     <string name="nav_contact">Contact</string>
     
     <!-- Skills Section -->

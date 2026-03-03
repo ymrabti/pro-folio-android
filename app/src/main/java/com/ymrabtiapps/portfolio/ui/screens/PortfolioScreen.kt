@@ -22,8 +22,7 @@ enum class PortfolioSection(val titleResId: Int, val icon: ImageVector) {
     HERO(R.string.nav_home, Icons.Default.Home),
     SKILLS(R.string.nav_skills, Icons.Default.Star),
     PROJECTS(R.string.nav_projects, Icons.Default.Folder),
-    EXPERIENCE(R.string.nav_experience, Icons.Default.Work),
-    EDUCATION(R.string.nav_education, Icons.Default.School),
+    CAREER(R.string.nav_career, Icons.Default.Work),
     CONTACT(R.string.nav_contact, Icons.Default.Email)
 }
 
@@ -41,9 +40,8 @@ fun PortfolioScreen() {
                 0 -> PortfolioSection.HERO
                 1 -> PortfolioSection.SKILLS
                 2 -> PortfolioSection.PROJECTS
-                3 -> PortfolioSection.EXPERIENCE
-                4 -> PortfolioSection.EDUCATION
-                5, 6 -> PortfolioSection.CONTACT
+                3 -> PortfolioSection.CAREER
+                4, 5 -> PortfolioSection.CONTACT
                 else -> PortfolioSection.HERO
             }
         }
@@ -65,9 +63,8 @@ fun PortfolioScreen() {
                                 PortfolioSection.HERO -> 0
                                 PortfolioSection.SKILLS -> 1
                                 PortfolioSection.PROJECTS -> 2
-                                PortfolioSection.EXPERIENCE -> 3
-                                PortfolioSection.EDUCATION -> 4
-                                PortfolioSection.CONTACT -> 5
+                                PortfolioSection.CAREER -> 3
+                                PortfolioSection.CONTACT -> 4
                             }
                             listState.animateScrollToItem(index)
                         }
@@ -112,16 +109,12 @@ fun PortfolioScreen() {
                 )
             }
             
-            // Experience Section
+            // Career Section (Experience + Education)
             item {
                 ExperienceSection(
                     contributions = portfolioData.professionalContributions,
                     modifier = Modifier.fillMaxWidth()
                 )
-            }
-            
-            // Education Section
-            item {
                 EducationSection(
                     educations = portfolioData.educations,
                     modifier = Modifier.fillMaxWidth()

@@ -63,12 +63,46 @@ object PortfolioRepository {
     private val projects = listOf(
         // FullStack Platforms
         Project(
-            id = "qr-checks",
+            id = "apple-health",
+            title = "AppleHealth",
+            description = "Health social platform where users share Apple Health export data analysis and personal health dashboards (steps, running/walking distance, calories, exercise minutes)",
+            category = ProjectCategory.FULLSTACK,
+            status = ProjectStatus.COMPLETED,
+            liveUrl = "https://healthy.youmrabti.com/",
+            githubUrl = "https://github.com/ymrabti/apple_health_ng",
+            imageUrl = "https://www.youmti.net/assets/images/full-stack/apple_health.webp",
+            features = listOf(
+                ProjectFeature(
+                    title = "Data Processing",
+                    description = "Secure script that reads and interprets Apple Health data",
+                    technologies = listOf(
+                        Technology(name = "Python", icon = "python"),
+                        Technology(name = "Data Analysis", icon = "analytics")
+                    )
+                ),
+                ProjectFeature(
+                    title = "Backend & Database",
+                    description = "Health data management and secure server communication",
+                    technologies = listOf(
+                        Technology(name = "Node.js", icon = "nodejs"),
+                        Technology(name = "Express", icon = "express"),
+                        Technology(name = "PostgreSQL", icon = "postgresql")
+                    )
+                ),
+                ProjectFeature(
+                    title = "Frontend Dashboard",
+                    description = "Personal health dashboard and social sharing features",
+                    technologies = listOf(Technology(name = "Angular", icon = "angular"))
+                )
+            )
+        ),
+        Project(
+            id = "presence-flow",
             title = "Presence flow with QR Codes",
             description = "Platform for check-in presence/leave of employees, students, business staff, stores via short temporary QR codes shown dynamically",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
-            imageUrl = "https://www.youmti.net/assets/images/presence_flow.webp",
+            imageUrl = "https://www.youmti.net/assets/images/full-stack/presence_flow.webp",
             liveUrl = "https://qrchecks.youmrabti.com",
             features = listOf(
                 ProjectFeature(
@@ -106,7 +140,7 @@ object PortfolioRepository {
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.ONGOING,
             liveUrl = "https://chat-up.youmrabti.com/",
-            imageUrl = "https://www.youmti.net/assets/images/chatup.webp",
+            imageUrl = "https://www.youmti.net/assets/images/full-stack/chatup.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Backend/Database",
@@ -142,48 +176,13 @@ object PortfolioRepository {
             description = "Web platform for locating on-duty pharmacies in Morocco with geolocation and search features",
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.PLANNED,
-            imageUrl = "https://www.youmti.net/assets/images/pharmacie_de_garde.webp",
+            imageUrl = "https://www.youmti.net/assets/images/full-stack/pharmacie_de_garde.webp",
             technologies = listOf(
                 Technology(name = "Next.js", icon = "nextjs"),
                 Technology(name = "TypeScript", icon = "typescript"),
                 Technology(name = "PostgreSQL", icon = "postgresql")
             ),
             features = emptyList()
-        ),
-        
-        Project(
-            id = "apple-health",
-            title = "AppleHealth",
-            description = "Health social platform where users share Apple Health export data analysis and personal health dashboards (steps, running/walking distance, calories, exercise minutes)",
-            category = ProjectCategory.FULLSTACK,
-            status = ProjectStatus.COMPLETED,
-            liveUrl = "https://healthy.youmrabti.com/",
-            githubUrl = "https://github.com/ymrabti/apple_health_ng",
-            imageUrl = "https://www.youmti.net/assets/images/apple_health.webp",
-            features = listOf(
-                ProjectFeature(
-                    title = "Data Processing",
-                    description = "Secure script that reads and interprets Apple Health data",
-                    technologies = listOf(
-                        Technology(name = "Python", icon = "python"),
-                        Technology(name = "Data Analysis", icon = "analytics")
-                    )
-                ),
-                ProjectFeature(
-                    title = "Backend & Database",
-                    description = "Health data management and secure server communication",
-                    technologies = listOf(
-                        Technology(name = "Node.js", icon = "nodejs"),
-                        Technology(name = "Express", icon = "express"),
-                        Technology(name = "PostgreSQL", icon = "postgresql")
-                    )
-                ),
-                ProjectFeature(
-                    title = "Frontend Dashboard",
-                    description = "Personal health dashboard and social sharing features",
-                    technologies = listOf(Technology(name = "Angular", icon = "angular"))
-                )
-            )
         ),
         Project(
             id = "streetview-xeno",
@@ -192,7 +191,7 @@ object PortfolioRepository {
             category = ProjectCategory.FULLSTACK,
             status = ProjectStatus.COMPLETED,
             liveUrl = "https://streetview_client.youmrabti.com/",
-            imageUrl = "https://www.youmti.net/assets/images/streetview.webp",
+            imageUrl = "https://www.youmti.net/assets/images/full-stack/streetview.webp",
             technologies = listOf(
                 Technology(name = "Krpano", icon = "panorama"),
                 Technology(name = "JavaScript", icon = "javascript"),
@@ -232,7 +231,7 @@ object PortfolioRepository {
             description = "Mobile application for football matches, competitions, and results with comprehensive statistics",
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
-            imageUrl = "https://www.youmti.net/assets/images/botola_max.webp",
+            imageUrl = "https://www.youmti.net/assets/images/mobile/botola_max.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Football Data Management",
@@ -252,7 +251,7 @@ object PortfolioRepository {
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
             playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.geoligtmeter",
-            imageUrl = "https://www.youmti.net/assets/images/luxmap.webp",
+            imageUrl = "https://www.youmti.net/assets/images/mobile/luxmap.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Light & Location Data",
@@ -295,7 +294,7 @@ object PortfolioRepository {
             status = ProjectStatus.COMPLETED,
             githubUrl = "https://github.com/youmtinetflutterpacks/power_geojson",
             liveUrl = "https://pub.dev/packages/power_geojson",
-            imageUrl = "https://www.youmti.net/assets/images/power_geojson.webp",
+            imageUrl = "https://www.youmti.net/assets/images/tools/power_geojson.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Flutter Package (pub.dev)",
@@ -315,6 +314,7 @@ object PortfolioRepository {
             description = "Flutter Compass Tools Implementation measuring azimuth angle between magnetic north and device orientation",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            imageUrl = "https://www.youmti.net/assets/images/tools/flutter_azimuth.webp",
             githubUrl = "https://github.com/youmtinetflutterpacks/flutter_azimuth",
             liveUrl = "https://pub.dev/packages/flutter_azimuth",
             features = listOf(
@@ -335,6 +335,7 @@ object PortfolioRepository {
             description = "Popup menu with clickable buttons and global click function to maintain user attention without breaking focus",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            imageUrl = "https://www.youmti.net/assets/images/tools/popup_menu_2.webp",
             githubUrl = "https://github.com/youmtinetflutterpacks/popup_menu_2",
             liveUrl = "https://pub.dev/packages/popup_menu_2",
             features = listOf(
@@ -355,6 +356,8 @@ object PortfolioRepository {
             description = "Online tool for converting JSON data structures to Dart model classes automatically",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            imageUrl = "https://www.youmti.net/assets/images/tools/dartify.webp",
+            liveUrl = "https://open-vsx.org/extension/YOUMTINET/dartifyjson",
             githubUrl = "https://github.com/ymrabti/vscode-dartify",
             features = listOf(
                 ProjectFeature(
@@ -369,11 +372,13 @@ object PortfolioRepository {
             )
         ),
         Project(
-            id = "image-360-converter",
+            id = "krpanos-tool",
             title = "Image 360° Converter",
             description = "Convert 360° images to multiresolution format with XLSX generator for StreetViewXeno integration",
             category = ProjectCategory.TOOL,
             status = ProjectStatus.COMPLETED,
+            imageUrl = "https://www.youmti.net/assets/images/tools/krpanos-tool.webp",
+            liveUrl = "https://www.npmjs.com/package/krpanos-tools",
             features = listOf(
                 ProjectFeature(
                     title = "Image Processing Tool",
@@ -382,53 +387,6 @@ object PortfolioRepository {
                         Technology(name = "Image Processing", icon = "image"),
                         Technology(name = "XLSX Generation", icon = "excel"),
                         Technology(name = "Krpano Integration", icon = "integration")
-                    )
-                )
-            )
-        ),
-        Project(
-            id = "soil-moisture-fetcher",
-            title = "Soil Moisture Fetcher",
-            description = "Automated soil moisture monitoring system using satellite remote sensing data from Sentinel-1 and NASA SMAP for precision agriculture",
-            category = ProjectCategory.TOOL,
-            status = ProjectStatus.COMPLETED,
-            githubUrl = "https://github.com/ymrabti/soil-moisture-fetcher",
-            features = listOf(
-                ProjectFeature(
-                    title = "Satellite Data Processing",
-                    description = "Daily imagery retrieval, moisture maps generation, GeoTIFF/JPEG exports",
-                    technologies = listOf(
-                        Technology(name = "Python", icon = "python"),
-                        Technology(name = "Google Earth Engine", icon = "earth-engine"),
-                        Technology(name = "Docker", icon = "docker"),
-                        Technology(name = "PostgreSQL", icon = "postgresql")
-                    )
-                ),
-                ProjectFeature(
-                    title = "Automated Monitoring",
-                    description = "Real-time tracking with notifications for smart irrigation and environmental research",
-                    technologies = listOf(
-                        Technology(name = "Sentinel-1", icon = "satellite"),
-                        Technology(name = "NASA SMAP", icon = "satellite"),
-                        Technology(name = "Automation", icon = "automation")
-                    )
-                )
-            )
-        ),
-        Project(
-            id = "pc-cleaner",
-            title = "Automatic PC Cleaner",
-            description = "Automated Windows system maintenance script running weekly to clean temp files, clear caches, empty Recycle Bin, and optimize disk space",
-            category = ProjectCategory.TOOL,
-            status = ProjectStatus.COMPLETED,
-            features = listOf(
-                ProjectFeature(
-                    title = "System Maintenance",
-                    description = "Hands-free system optimization with automated logging and email reporting",
-                    technologies = listOf(
-                        Technology(name = "PowerShell", icon = "powershell"),
-                        Technology(name = "Task Scheduler", icon = "windows"),
-                        Technology(name = "Email Automation", icon = "email")
                     )
                 )
             )
