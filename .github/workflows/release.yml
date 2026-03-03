@@ -6,57 +6,57 @@ on:
             - "v[0-9]+.[0-9]+.[0-9]+*" # Trigger on version tags
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
 
-      - name: Setup JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+            - name: Setup JDK
+              uses: actions/setup-java@v4
+              with:
+                    java-version: "11"
+                    distribution: "temurin"
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
+            - name: Setup Ruby
+              uses: ruby/setup-ruby@v1
+              with:
+                  ruby-version: "3.2"
+                  bundler-cache: true
 
-      - name: Decode Keystore
-        env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-        run: echo "$KEYSTORE_BASE64" | base64 --decode > app/release.keystore
+            - name: Decode Keystore
+              env:
+                  KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+              run: echo "$KEYSTORE_BASE64" | base64 --decode > app/release.keystore
 
-      - name: Write local.properties
-        run: |
-          TAG="${{ github.ref_name }}"
-          VERSION_NAME="${TAG#v}"
-          VERSION_NAME="${VERSION_NAME%+*}"
-          if [[ "$TAG" == *"+"* ]]; then
-            VERSION_CODE="${TAG##*+}"
-          else
-            VERSION_CODE=$(git rev-list --count HEAD)
-          fi
-          echo "release.storeFile=$(pwd)/app/release.keystore" >> local.properties
-          echo "release.storePassword=${{ secrets.KEYSTORE_PASSWORD }}" >> local.properties
-          echo "release.keyAlias=${{ secrets.KEY_ALIAS }}" >> local.properties
-          echo "release.keyPassword=${{ secrets.KEY_PASSWORD }}" >> local.properties
-          echo "VERSION_CODE=${VERSION_CODE}" >> local.properties
-          echo "VERSION_NAME=${VERSION_NAME}" >> local.properties
+            - name: Write local.properties
+              run: |
+                  TAG="${{ github.ref_name }}"
+                  VERSION_NAME="${TAG#v}"
+                  VERSION_NAME="${VERSION_NAME%+*}"
+                  if [[ "$TAG" == *"+"* ]]; then
+                    VERSION_CODE="${TAG##*+}"
+                  else
+                    VERSION_CODE=$(git rev-list --count HEAD)
+                  fi
+                  echo "release.storeFile=$(pwd)/app/release.keystore" >> local.properties
+                  echo "release.storePassword=${{ secrets.KEYSTORE_PASSWORD }}" >> local.properties
+                  echo "release.keyAlias=${{ secrets.KEY_ALIAS }}" >> local.properties
+                  echo "release.keyPassword=${{ secrets.KEY_PASSWORD }}" >> local.properties
+                  echo "VERSION_CODE=${VERSION_CODE}" >> local.properties
+                  echo "VERSION_NAME=${VERSION_NAME}" >> local.properties
 
-      - name: Decode Play Store JSON
-        env:
-          PLAY_STORE_JSON: ${{ secrets.PLAY_STORE_JSON }}
-        run: echo "$PLAY_STORE_JSON" > app/setcret.json
+            - name: Decode Play Store JSON
+              env:
+                  PLAY_STORE_JSON: ${{ secrets.PLAY_STORE_JSON }}
+              run: echo "$PLAY_STORE_JSON" > app/setcret.json
 
-      - name: Make Gradle executable
-        run: chmod +x gradlew
+            - name: Make Gradle executable
+              run: chmod +x gradlew
 
-      - name: Build AAB
-        run: ./gradlew bundleRelease --stacktrace
+            - name: Build AAB
+              run: ./gradlew bundleRelease --stacktrace
 
-      - name: Upload to Play Store
-        run: bundle exec fastlane production
+            - name: Upload to Play Store
+              run: bundle exec fastlane production
