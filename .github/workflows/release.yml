@@ -55,8 +55,5 @@ jobs:
             - name: Make Gradle executable
               run: chmod +x gradlew
 
-            - name: Build AAB
-              run: ./gradlew bundleRelease
-
             - name: Upload to Play Store
               run: bundle exec fastlane production

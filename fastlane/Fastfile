@@ -5,7 +5,13 @@ platform :android do
   desc "Deploy Kotlin Android App to Production"
   lane :production do
 
-    # Find the AAB built by the CI Gradle step
+    # Build the release AAB
+    gradle(
+      task: "bundle",
+      build_type: "Release"
+    )
+
+    # Find the AAB
     aab_path = Dir.glob("app/build/outputs/bundle/release/*.aab").first
     UI.user_error!("No AAB found in app/build/outputs/bundle/release/") unless aab_path
     UI.message("Uploading AAB: #{aab_path}")

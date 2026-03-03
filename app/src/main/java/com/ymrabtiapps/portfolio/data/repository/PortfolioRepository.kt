@@ -141,7 +141,7 @@ object PortfolioRepository {
             title = "Pharmacie de Garde Morocco",
             description = "Web platform for locating on-duty pharmacies in Morocco with geolocation and search features",
             category = ProjectCategory.FULLSTACK,
-            status = ProjectStatus.ONGOING,
+            status = ProjectStatus.PLANNED,
             imageUrl = "https://www.youmti.net/assets/images/pharmacie_de_garde.webp",
             technologies = listOf(
                 Technology(name = "Next.js", icon = "nextjs"),
@@ -150,15 +150,7 @@ object PortfolioRepository {
             ),
             features = emptyList()
         ),
-        Project(
-            id = "rifq",
-            title = "RIFQ",
-            description = "RIFQ is a national digital platform for the identification, monitoring, and humane management of domestic and stray animals, supporting public health, animal welfare, and data-driven territorial governance.",
-            category = ProjectCategory.FULLSTACK,
-            status = ProjectStatus.PLANNED,
-            imageUrl = "https://www.youmti.net/assets/images/rifq.webp",
-            features = emptyList()
-        ),
+        
         Project(
             id = "apple-health",
             title = "AppleHealth",
@@ -295,47 +287,6 @@ object PortfolioRepository {
             )
         ),
         // Development Tools
-        Project(
-            id = "portfolio-website",
-            title = "Portfolio Website",
-            description = "This stunning Angular portfolio showcasing skills, projects, and professional experience",
-            category = ProjectCategory.TOOL,
-            status = ProjectStatus.COMPLETED,
-            imageUrl = "https://avatars.githubusercontent.com/ymrabti",
-            liveUrl = "https://youmrabti.com",
-            features = listOf(
-                ProjectFeature(
-                    title = "Modern Portfolio",
-                    description = "Comprehensive showcase of expertise and experience",
-                    technologies = listOf(
-                        Technology(name = "Angular", icon = "angular"),
-                        Technology(name = "TypeScript", icon = "typescript"),
-                        Technology(name = "GSAP Animations", icon = "animation")
-                    )
-                )
-            )
-        ),
-        Project(
-            id = "svg-playground",
-            title = "SVG Playground",
-            description = "Create stunning SVG graphics with free online generator. Design polygons, stars, spirals, and curved shapes with real-time preview. Export as SVG or PNG.",
-            category = ProjectCategory.TOOL,
-            status = ProjectStatus.COMPLETED,
-            githubUrl = "https://github.com/ymrabti/svg-playground",
-            liveUrl = "https://svg-playground.youmrabti.com",
-            imageUrl = "https://www.youmti.net/assets/images/svg_playground.webp",
-            features = listOf(
-                ProjectFeature(
-                    title = "SVG Creation Tool",
-                    description = "Real-time SVG generation with multiple shape types",
-                    technologies = listOf(
-                        Technology(name = "JavaScript", icon = "javascript"),
-                        Technology(name = "SVG", icon = "svg"),
-                        Technology(name = "Canvas", icon = "canvas")
-                    )
-                )
-            )
-        ),
         Project(
             id = "power-geojson",
             title = "PowerGeoJSON",
