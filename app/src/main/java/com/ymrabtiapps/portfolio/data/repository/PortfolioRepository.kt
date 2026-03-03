@@ -246,13 +246,13 @@ object PortfolioRepository {
             )
         ),
         Project(
-            id = "geolight-meter",
-            title = "Geolight Meter",
+            id = "luxmap",
+            title = "LuxMap",
             description = "Mobile tool for collection of lux light data with geolocation, handles XLSX exports for analysis",
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.COMPLETED,
             playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.geoligtmeter",
-            imageUrl = "https://www.youmti.net/assets/images/geolightmeter_1.webp",
+            imageUrl = "https://www.youmti.net/assets/images/luxmap.webp",
             features = listOf(
                 ProjectFeature(
                     title = "Light & Location Data",
@@ -267,20 +267,20 @@ object PortfolioRepository {
             )
         ),
         Project(
-            id = "pharmagest",
-            title = "Pharmagest",
-            description = "Pharmacy management mobile application for inventory, sales, and customer management (ongoing)",
+            id = "thumbhub",
+            title = "ThumbHub",
+            description = "A Flutter app for fetching, previewing, and downloading YouTube video thumbnails in multiple resolutions.",
             category = ProjectCategory.MOBILE,
             status = ProjectStatus.ONGOING,
-            playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.pharmagest",
-            imageUrl = "https://www.youmti.net/assets/images/pharmagest.webp",
+            playStoreUrl = "https://play.google.com/store/apps/details?id=com.ymrabtiapps.thumbnails.thumbnail_youtube",
+            imageUrl = "https://www.youmti.net/assets/images/mobile/thumbhub.webp",
             features = listOf(
                 ProjectFeature(
-                    title = "Pharmacy Management",
-                    description = "Complete pharmacy operations and inventory management",
+                    title = "YouTube Thumbnails",
+                    description = "Fetch, preview, and download YouTube video thumbnails in multiple resolutions",
                     technologies = listOf(
                         Technology(name = "Flutter", icon = "flutter"),
-                        Technology(name = "Database Management", icon = "database"),
+                        Technology(name = "Firebase", icon = "database"),
                         Technology(name = "Business Logic", icon = "business")
                     )
                 )
@@ -502,7 +502,7 @@ object PortfolioRepository {
             company = "Marafik Berkane",
             role = "GIS Specialist",
             period = "06/2021 - 12/2022",
-            description = "Designed and delivered dynamic GIS solutions—real-time maps, spatial analysis, and distance measurement. Managed the full geospatial data lifecycle and led ArcGIS Online initiatives, creating interactive dashboards to drive urban development and digital citizen services.",
+            description = "As a GIS Engineer at Marafik Berkane, I architected and delivered high-impact geospatial solutions, including real-time mapping systems, advanced spatial analytics, and precision distance measurement tools. I oversaw the full geospatial data lifecycle—from acquisition and modeling to governance and optimization—while leading ArcGIS Online initiatives and developing interactive dashboards to enhance operational visibility and decision-making. \n\nMy scope covered critical public services such as public transport networks, household waste management, green spaces and urban forestry (palms and trees), slaughterhouses, and their associated supply chains, ensuring data-driven governance and service performance optimization.",
             projects = emptyList()
         )
     )

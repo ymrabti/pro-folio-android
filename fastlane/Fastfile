@@ -11,9 +11,9 @@ platform :android do
       build_type: "Release"
     )
 
-    # Find the AAB
-    aab_path = Dir.glob("app/build/outputs/bundle/release/*.aab").first
-    UI.user_error!("No AAB found in app/build/outputs/bundle/release/") unless aab_path
+    # Use the path set by the gradle() action
+    aab_path = Actions.lane_context[SharedValues::GRADLE_AAB_OUTPUT_PATH]
+    UI.user_error!("No AAB found after gradle build") unless aab_path
     UI.message("Uploading AAB: #{aab_path}")
 
     # Upload to Play Store
