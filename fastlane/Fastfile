@@ -14,7 +14,7 @@ platform :android do
     # Upload to Play Store
     upload_to_play_store(
       track: "production",
-      aab: "../app/build/outputs/bundle/release/app-release.aab",
+      aab: lane_context[SharedValues::GRADLE_AAB_OUTPUT_PATH],
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true

@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
@@ -23,19 +23,29 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
+          bundler-cache: true
 
-      - name: Install Fastlane
-        run: gem install fastlane
+      - name: Decode Keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/release.keystore
+
+      - name: Write local.properties
+        run: |
+          TAG="${{ github.ref_name }}"
+          VERSION_NAME="${TAG#v}"
+          VERSION_NAME="${VERSION_NAME%+*}"
+          VERSION_CODE="${TAG##*+}"
+          echo "release.storeFile=$(pwd)/app/release.keystore" >> local.properties
+          echo "release.storePassword=${{ secrets.KEYSTORE_PASSWORD }}" >> local.properties
+          echo "release.keyAlias=${{ secrets.KEY_ALIAS }}" >> local.properties
+          echo "release.keyPassword=${{ secrets.KEY_PASSWORD }}" >> local.properties
+          echo "VERSION_CODE=${VERSION_CODE}" >> local.properties
+          echo "VERSION_NAME=${VERSION_NAME}" >> local.properties
 
       - name: Decode Play Store JSON
-        run: |
-          mkdir -p android/fastlane/keys
-          echo "${{ secrets.PLAY_STORE_JSON }}" > android/fastlane/keys/play-store-service-account.json
+        run: echo "${{ secrets.PLAY_STORE_JSON }}" > app/setcret.json
 
       - name: Make Gradle executable
         run: chmod +x gradlew
 
       - name: Run Fastlane
-        run: |
-          cd android
-          fastlane production
+        run: bundle exec fastlane production
