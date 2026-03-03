@@ -53,7 +53,7 @@ jobs:
               run: echo "$PLAY_STORE_JSON" > app/secret.json
 
             - name: Make Gradle executable
-              run: chmod +x gradlew
+              run: chmod +x gradlew --stack-trace
 
             - name: Upload to Play Store
               run: bundle exec fastlane production
