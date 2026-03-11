@@ -141,7 +141,7 @@ fun ContactSection(
                     }
                     
                     OutlinedButton(
-                        onClick = { uriHandler.openUri("https://drive.google.com/file/d/1CtbHOMAFKwDKRcgt4aaJ3SohUWl1qI76/view") },
+                        onClick = { uriHandler.openUri("https://drive.google.com/file/d/1OvsMCcpRqmMQrc9tXK-UhiorbgqTqZca/view?usp=sharing") },
                         colors = ButtonDefaults.outlinedButtonColors(
                             contentColor = Color.White
                         ),
